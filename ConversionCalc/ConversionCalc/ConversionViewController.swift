@@ -14,8 +14,33 @@ class ConversionViewController: UIViewController {
 
     @IBOutlet weak var inputdisplay: UITextField!
     
+   
     @IBAction func convert(_ sender: Any) {
+        let alert = UIAlertController(title:"Choose Converter", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Farenheight to Celsius", style: .default, handler: { (alertAction) -> Void in
+            self.outputdisplay.text = "°C"
+            self.inputdisplay.text = "°F"
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Celsius to Farenheight", style: .default, handler: { (alertAction) -> Void in
+            self.outputdisplay.text = "°F"
+            self.inputdisplay.text = "°C"
+        }))
+        alert.addAction(UIAlertAction(title: "Miles to Kilometers", style: .default, handler: { (alertAction) -> Void in
+            self.outputdisplay.text = "mi"
+            self.inputdisplay.text = "km"
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Kilometers to Miles", style: .default, handler: { (alertAction) -> Void in
+            self.outputdisplay.text = "km"
+            self.inputdisplay.text = "°mi"
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
