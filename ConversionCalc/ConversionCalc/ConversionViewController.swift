@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ConversionViewController: UIViewController {
+class ConversionViewController: UIViewController, UIActionSheetDelegate {
     
     @IBOutlet weak var outputdisplay: UITextField!    
 
     @IBOutlet weak var inputdisplay: UITextField!
     
    
-    @IBAction func convert(_ sender: Any) {
+    @IBAction func convert(_ sender: AnyObject) {
         let alert = UIAlertController(title:"Choose Converter", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         
         alert.addAction(UIAlertAction(title: "Farenheight to Celsius", style: .default, handler: { (alertAction) -> Void in
@@ -28,13 +28,13 @@ class ConversionViewController: UIViewController {
             self.inputdisplay.text = "°C"
         }))
         alert.addAction(UIAlertAction(title: "Miles to Kilometers", style: .default, handler: { (alertAction) -> Void in
-            self.outputdisplay.text = "mi"
-            self.inputdisplay.text = "km"
+            self.outputdisplay.text = "km"
+            self.inputdisplay.text = "mi"
             
         }))
         alert.addAction(UIAlertAction(title: "Kilometers to Miles", style: .default, handler: { (alertAction) -> Void in
-            self.outputdisplay.text = "km"
-            self.inputdisplay.text = "°mi"
+            self.outputdisplay.text = "mi"
+            self.inputdisplay.text = "km"
             
         }))
         self.present(alert, animated: true, completion: nil)
@@ -44,7 +44,12 @@ class ConversionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         var conversions: [Convert] = [Convert(label:"Celsius to Farenheight", input_unit: "°C", output_unit: "°F"), Convert(label:"Farenheight to Celsius", input_unit: "°F", output_unit: "°C"), Convert(label:"miles to kilometers", input_unit: "mi", output_unit: "km"), Convert(label:"kilometers to miles", input_unit: "km", output_unit: "mi")]
+        self.outputdisplay.text = conversions[1].output_unit
+        self.inputdisplay.text = conversions[1].input_unit
+        
+        
         // Do any additional setup after loading the view.
     }
     
