@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		597B538A236B33F90072F934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597B5389236B33F90072F934 /* AppDelegate.swift */; };
 		597B538C236B33F90072F934 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597B538B236B33F90072F934 /* SceneDelegate.swift */; };
-		597B5391236B33F90072F934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597B538F236B33F90072F934 /* Main.storyboard */; };
+		597B5391236B33F90072F934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597B538F236B33F90072F934 /* Main.storyboard */; settings = {ASSET_TAGS = (1, 10, 11, 12, 2, 3, 4, 5, 6, 7, 8, 9, ); }; };
 		597B5394236B33F90072F934 /* ConversionCalc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 597B5392236B33F90072F934 /* ConversionCalc.xcdatamodeld */; };
 		597B5396236B33FC0072F934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597B5395236B33FC0072F934 /* Assets.xcassets */; };
 		597B5399236B33FC0072F934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597B5397236B33FC0072F934 /* LaunchScreen.storyboard */; };
@@ -196,6 +196,20 @@
 		597B537E236B33F80072F934 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+					10,
+					11,
+					12,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+				);
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "James Kirkland";

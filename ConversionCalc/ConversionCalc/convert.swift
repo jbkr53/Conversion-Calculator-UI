@@ -9,7 +9,10 @@
 import Foundation
 
 struct Convert {
-       var label:String
-       var input_unit:String
-       var output_unit:String
+       var label: String
+       var input_unit: String
+       var output_unit: String
+       
+    
+    
    }
