@@ -39,11 +39,12 @@ func cToF(_ celsius: Double) -> Double{
        return (celsius * 9/5 + 32)
     }
     
-    //converts celsius to farenheight
+    //converts celsius to farenheight, returns double
 func fToC(_ farenheight: Double) -> Double{
         return (farenheight - 32) * 5/9
     }
     
+    // updates output display field with conversion number and symbol
 func update() {
         if let text = inputdisplay.text{
             let inputNum = Double(text)
@@ -64,8 +65,19 @@ func update() {
     }
     
     
+    @IBAction func sign(_ sender: Any) {
+        if let text = inputdisplay.text,
+            var inputDub = Double(text) {
+            inputDub *= -1
+            inputdisplay.text = "\(inputDub)"
+            update()
+        } else {
+            inputdisplay.text = "-"
+            outputdisplay.text = "-"
+        }
+    }
     
-   
+   // shows action sheet when converter button is tapped, selects current conversion & updates text fields
     @IBAction func convert(_ sender: AnyObject) {
         let alert = UIAlertController(title:"Choose Converter", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         
@@ -123,7 +135,7 @@ func update() {
         
     }
     
-    
+    // handles a number being tapped, updates display field after each number is tapped
     @IBAction func buttons(_ sender: UIButton) {
         
         switch sender.tag{
@@ -139,13 +151,15 @@ func update() {
         }
     }
     
+    // array of possible conversions with respective labels
+    
     let conversions: [Convert] = [Convert(label:"Celsius to Farenheight", input_unit: "°C", output_unit: "°F"), Convert(label:"Farenheight to Celsius", input_unit: "°F", output_unit: "°C"), Convert(label:"miles to kilometers", input_unit: "mi", output_unit: "km"), Convert(label:"kilometers to miles", input_unit: "km", output_unit: "mi")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        
+        //sets default conversion and text fields
         self.outputdisplay.placeholder = conversions[1].output_unit
         self.inputdisplay.placeholder = conversions[1].input_unit
         numberOnScreen = 0
